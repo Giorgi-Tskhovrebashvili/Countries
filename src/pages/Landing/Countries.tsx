@@ -2,7 +2,7 @@ import { Filter, Popup, SearchBox } from "../../common";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { CountriesType } from "../../types";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Countries = () => {
   const [countries, setCountries] = useState<CountriesType[]>([]);
@@ -10,11 +10,11 @@ const Countries = () => {
 
     const handlePopup = () => setShow(!show);
     
-    const navigation = useNavigate();
+    // const navigation = useNavigate();
 
-    const handleClick = () => {
-      navigation("/Country-Page");
-    };
+    // const handleClick = () => {
+    //   navigation("/Country-Page");
+    // };
 
   useEffect(() => {
     const getData = async () => {
