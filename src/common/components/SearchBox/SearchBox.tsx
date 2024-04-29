@@ -4,7 +4,7 @@ import { search } from "../../assets";
 
 const SearchBox = ({ onChange }: SearchBoxType) => {
   return (
-    <div className="flex w-[343px] h-[48px] px-[32px] py-[14px] gap-[26px] rounded-[5px] border-[1px] border-slate-950 xl:w-[480px] xl:h-[56px] xl:py-[18px]">
+    <div className="flex w-[343px] h-[48px] px-[32px] py-[14px] gap-[26px] rounded-[5px] xl:w-[480px] xl:h-[56px] xl:py-[18px] bg-[#FFFFFF]">
       <Image icon={search} className={"w-[16px] xl:w-[18px]"} />
       <Input
         className={

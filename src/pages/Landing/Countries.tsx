@@ -31,7 +31,7 @@ const Countries = () => {
     });
 
   return (
-    <div className="w-[375px] flex flex-col items-center m-auto px-[16px] py-[24px] gap-[32px] xl:w-[1440px] xl:px-[80px] xl:py-[48px] xl:gap-[48px]">
+    <div className="w-[375px] flex flex-col items-center m-auto px-[16px] py-[24px] gap-[32px] xl:w-[100%] xl:px-[80px] xl:py-[48px] xl:gap-[48px]">
       <div className="flex flex-col gap-[40px] relative xl:flex-row xl:gap-[600px]">
         <SearchBox onChange={(e) => setSearch(e.target.value)} />
         <Filter text={"Filter by Region"} onClick={handlePopup} />
@@ -41,9 +41,9 @@ const Countries = () => {
         {filteredCountries.map((country) => {
           return (
             <Link
-              to={`/Country-Page`}
+              to={`/Country-Page/${country.name.common}`}
               key={country.name.common}
-              className="w-[264px] h-[336px] flex flex-col gap-[12px] rounded-[5px] border-[1px] border-slate-950"
+              className="w-[264px] h-[336px] flex flex-col gap-[12px] rounded-[5px] bg-[#FFFFFF]"
             >
               <img
                 className="w-[267px] h-[160px]"

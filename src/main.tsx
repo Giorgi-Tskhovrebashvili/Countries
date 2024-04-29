@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/Country-Page",
+    path: `Country-Page/:name`,
     element: (
       <MainLayout>
         <CountryPage />
