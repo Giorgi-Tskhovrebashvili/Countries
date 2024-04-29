@@ -58,7 +58,7 @@ const Countries = () => {
                   <p className="text-[14px] leading-[16px]">
                     Population:{" "}
                     <small className="text-[14px] font-light leading-[16px]">
-                      {country.population}
+                      {country.population.toLocaleString()}
                     </small>
                   </p>
                   <p className="text-[14px] leading-[16px]">

@@ -62,7 +62,7 @@ const CountryPage = () => {
                     <p className="leading-[32px] text-[14px] xl:text-[16px]">
                       Population:{" "}
                       <small className="leading-[32px] font-light text-[14px] xl:text-[16px]">
-                        {country.population}
+                        {country.population.toLocaleString()}
                       </small>
                     </p>
                     <p className="leading-[32px] text-[14px] xl:text-[16px]">
