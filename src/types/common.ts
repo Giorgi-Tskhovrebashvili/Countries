@@ -3,14 +3,18 @@ export interface CountriesType {
     png: string;
   };
   name: {
+    nativeName: {
+      [key: string]: {
+        official: string;
+      };
+    };
     common: string;
-    official: string;
   };
   population: number;
   region: string;
   subregion: string;
   capital: string;
-  tld: string;
+  tld: any;
   currencies: string;
   languages: string;
   borders: string[];

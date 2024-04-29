@@ -22,6 +22,14 @@ const Countries = () => {
 
   console.log("countries details", countries);
 
+  const filteredCountries = countries
+    .filter((country) => {
+      return country.name.common.toLowerCase().includes(search.toLowerCase());
+    })
+    .sort((a, b) => {
+      return a.name.common.localeCompare(b.name.common);
+    });
+
   return (
     <div className="w-[375px] flex flex-col items-center m-auto px-[16px] py-[24px] gap-[32px] xl:w-[1440px] xl:px-[80px] xl:py-[48px] xl:gap-[48px]">
       <div className="flex flex-col gap-[40px] relative xl:flex-row xl:gap-[600px]">
@@ -30,58 +38,46 @@ const Countries = () => {
         {show && <Popup />}
       </div>
       <div className="grid grid-cols-1 justify-items-center	gap-[40px] xl:grid-cols-4 xl:gap-[75px]">
-        {countries
-          .filter((country) => {
-            const searchLower = search.toLowerCase();
-            const countryNameLower = country.name.common.toLowerCase();
-
-            return countryNameLower.includes(searchLower);
-          })
-          .sort((a, b) => {
-            if (a.name.common < b.name.common) return -1;
-            if (a.name.common > b.name.common) return 1;
-            return 0;
-          })
-          .map((country) => {
-            return (
-              <Link
-                to={"/Country-Page"}
-                key={country.name.common}
-                className="w-[264px] h-[336px] flex flex-col gap-[12px] rounded-[5px] border-[1px] border-slate-950"
-              >
-                <img
-                  className="w-[267px] h-[160px]"
-                  src={country.flags.png}
-                  alt=""
-                />
-                <div className="flex flex-col gap-[16px] px-[24px]">
-                  <h1 className="text-[18px] font-extrabold leadin-[26px]">
-                    {country.name.common}
-                  </h1>
-                  <div className="flex flex-col gap-[8px]">
-                    <p className="text-[14px] leading-[16px]">
-                      Population:{" "}
-                      <small className="text-[14px] font-light leading-[16px]">
-                        {country.population}
-                      </small>
-                    </p>
-                    <p className="text-[14px] leading-[16px]">
-                      Region:{" "}
-                      <small className="text-[14px] font-light leading-[16px]">
-                        {country.region}
-                      </small>
-                    </p>
-                    <p className="text-[14px] leading-[16px]">
-                      Capital:{" "}
-                      <small className="text-[14px] font-light leading-[16px]">
-                        {country.capital}
-                      </small>
-                    </p>
-                  </div>
+        {filteredCountries.map((country) => {
+          return (
+            <Link
+              to={`/Country-Page`}
+              key={country.name.common}
+              className="w-[264px] h-[336px] flex flex-col gap-[12px] rounded-[5px] border-[1px] border-slate-950"
+            >
+              <img
+                className="w-[267px] h-[160px]"
+                src={country.flags.png}
+                alt=""
+              />
+              <div className="flex flex-col gap-[16px] px-[24px]">
+                <h1 className="text-[18px] font-extrabold leadin-[26px]">
+                  {country.name.common}
+                </h1>
+                <div className="flex flex-col gap-[8px]">
+                  <p className="text-[14px] leading-[16px]">
+                    Population:{" "}
+                    <small className="text-[14px] font-light leading-[16px]">
+                      {country.population}
+                    </small>
+                  </p>
+                  <p className="text-[14px] leading-[16px]">
+                    Region:{" "}
+                    <small className="text-[14px] font-light leading-[16px]">
+                      {country.region}
+                    </small>
+                  </p>
+                  <p className="text-[14px] leading-[16px]">
+                    Capital:{" "}
+                    <small className="text-[14px] font-light leading-[16px]">
+                      {country.capital}
+                    </small>
+                  </p>
                 </div>
-              </Link>
-            );
-          })}
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

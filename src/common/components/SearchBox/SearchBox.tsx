@@ -8,7 +8,7 @@ const SearchBox = ({ onChange }: SearchBoxType) => {
       <Image icon={search} className={"w-[16px] xl:w-[18px]"} />
       <Input
         className={
-          "text-[12px] font-normal leading-[20px] px-[10px] w-[140px] h-[20px] xl:text-[14px] xl:px-[15px] xl:w-[200px]"
+          "text-[12px] font-normal leading-[20px] px-[10px] w-[140px] h-[20px] outline-none xl:text-[14px] xl:px-[15px] xl:w-[200px]"
         }
         type={"search"}
         placeholder={"Search for a country…"}
