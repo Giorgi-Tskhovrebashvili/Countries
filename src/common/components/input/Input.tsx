@@ -6,6 +6,7 @@ const Input = ({
   placeholder,
   onChange,
   value,
+  name,
 }: InputType) => {
   return (
     <input
@@ -14,6 +15,7 @@ const Input = ({
       placeholder={placeholder}
       onChange={onChange}
       value={value}
+      name={name}
     />
   );
 };

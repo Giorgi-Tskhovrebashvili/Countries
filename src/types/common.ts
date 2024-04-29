@@ -1,44 +1,59 @@
 export interface CountriesType {
-    flags: {
-      png: string;
-    };
-    name: {
-      common: string;
-    };
-    population: number;
-    region: string;
-    capital: string;
+  flags: {
+    png: string;
+  };
+  name: {
+    common: string;
+    official: string;
+  };
+  population: number;
+  region: string;
+  subregion: string;
+  capital: string;
+  tld: string;
+  currencies: string;
+  languages: string;
+  borders: string[];
 }
-  
+
 export interface MainLayoutProps {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
-  
+
 export interface HeaderType {
-    onClick: (event: any) => void;
+  onClick: (event: any) => void;
 }
 
 export interface ButtonType {
-    className: string;
-    onClick: (event: any) => void;
-    children?: string;
-    src?: string;
+  className: string;
+  onClick: (event: any) => void;
+  children?: string;
+  src?: string;
 }
-  
+
 export interface InputType {
-    className: string;
-    type: 'text' | 'search';
-    placeholder: string;
-    onChange: () => void;
-    value: string;
+  className: string;
+  type: "text" | "search";
+  placeholder: string;
+  onChange: (event: any) => void;
+  value?: string;
+  name: string;
 }
 
 export interface ImageType {
-    icon?: string
-    className?: string;
+  icon?: string;
+  className?: string;
 }
 
 export interface FilterType {
-    text: string;
-    onClick: () => void;
+  text: string;
+  onClick: () => void;
+}
+
+export interface SearchBoxType {
+  onChange: (event: any) => void;
+}
+
+export interface UseFetchType {
+  api_url: string;
 }
